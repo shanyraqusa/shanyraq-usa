@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Shanyraq USA — корпоративный клуб коллективной покупательной силы для русскоязычного сообщества в США. Страхование, аренда, связь, медицина по корпоративным ценам." />
+<meta property="og:title" content="Shanyraq USA — Корпоративный клуб" />
+<meta property="og:description" content="Объединяемся, чтобы экономить вместе. Подпишитесь и станьте одним из первых 200 участников." />
+<meta property="og:type" content="website" />
+<title>Shanyraq USA — Корпоративный клуб</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ==========================================================
+     RESET & VARIABLES
+     ========================================================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  img, svg { display: block; max-width: 100%; }
+  button { font: inherit; cursor: pointer; border: none; background: none; }
+  input, textarea, select { font: inherit; }
+  a { color: inherit; text-decoration: none; }
+
+  :root {
+    --navy: #1A2B4A;
+    --navy-dark: #0F1B30;
+    --navy-deep: #08111F;
+    --gold: #D4A574;
+    --gold-light: #E5C291;
+    --gold-soft: #EDD4B0;
+    --coral: #C8553D;
+    --teal: #2C7873;
+    --cream: #FAF7F2;
+    --cream-warm: #F4EEE4;
+    --white: #FFFFFF;
+    --gray-900: #1A2B4A;
+    --gray-700: #4B5563;
+    --gray-500: #6B7280;
+    --gray-300: #D1D5DB;
+    --gray-100: #F3F4F6;
+
+    --display: 'Fraunces', 'Georgia', serif;
+    --body: 'Manrope', system-ui, -apple-system, sans-serif;
+
+    --container: 1240px;
+    --section-pad: clamp(4rem, 10vw, 8rem);
+    --radius: 4px;
+    --shadow-soft: 0 10px 40px -15px rgba(26, 43, 74, 0.15);
+    --shadow-deep: 0 25px 60px -20px rgba(26, 43, 74, 0.25);
+  }
+
+  body {
+    font-family: var(--body);
+    color: var(--gray-900);
+    background: var(--cream);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: var(--container);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  /* ==========================================================
+     TYPOGRAPHY
+     ========================================================== */
+  .eyebrow {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--navy);
+  }
+  h2 {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-variation-settings: "opsz" 50;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .lead {
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    color: var(--gray-700);
+    max-width: 680px;
+    line-height: 1.55;
+  }
+
+  .accent-italic {
+    font-style: italic;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144;
+  }
+
+  /* ==========================================================
+     BUTTONS
+     ========================================================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 1rem 1.75rem;
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    border-radius: var(--radius);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy-dark);
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(212, 165, 116, 0.55);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(237, 212, 176, 0.3);
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    background: rgba(212, 165, 116, 0.08);
+  }
+  .btn .arrow {
+    transition: transform 0.3s ease;
+  }
+  .btn:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* ==========================================================
+     NAVIGATION
+     ========================================================== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: all 0.4s ease;
+    background: transparent;
+  }
+  nav.scrolled {
+    background: rgba(15, 27, 48, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.85rem 0;
+    box-shadow: 0 1px 0 rgba(212, 165, 116, 0.15);
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .logo .usa {
+    color: var(--gold);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+  .nav-cta {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ==========================================================
+     HERO
+     ========================================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--navy-dark);
+    color: var(--cream);
+    padding: 8rem 0 5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(44, 120, 115, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 25s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -40px) scale(1.05); }
+    66% { transform: translate(-20px, 30px) scale(0.95); }
+  }
+
+  /* Subtle grain texture */
+  .hero .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+  }
+  .hero .eyebrow {
+    color: var(--gold);
+    margin-bottom: 1.75rem;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    line-height: 0.95;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144;
+    margin-bottom: 0.25rem;
+  }
+  .hero .subtitle-large {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 2rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .hero p.tagline {
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    color: var(--cream);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.45;
+    font-weight: 300;
+  }
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .hero-meta {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+    max-width: 720px;
+  }
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-meta-item .num {
+    font-family: var(--display);
+    font-size: 2rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .hero-meta-item .label {
+    font-size: 0.85rem;
+    color: rgba(250, 247, 242, 0.7);
+    margin-top: 0.35rem;
+  }
+
+  /* Scroll indicator */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(250, 247, 242, 0.5);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+  .scroll-hint .line {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ==========================================================
+     SECTION BASE
+     ========================================================== */
+  section.content {
+    padding: var(--section-pad) 0;
+    position: relative;
+  }
+  section.content + section.content {
+    border-top: 1px solid rgba(26, 43, 74, 0.06);
+  }
+  .section-header {
+    margin-bottom: 4rem;
+    max-width: 720px;
+  }
+  .section-header .eyebrow {
+    margin-bottom: 1.25rem;
+  }
+
+  /* ==========================================================
+     PROBLEM SECTION
+     ========================================================== */
+  .problem {
+    background: var(--cream);
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .stat-block {
+    background: var(--white);
+    padding: 3rem;
+    border-left: 4px solid var(--coral);
+    box-shadow: var(--shadow-soft);
+  }
+  .stat-number {
+    font-family: var(--display);
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    color: var(--coral);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144;
+  }
+  .stat-label {
+    font-size: 1rem;
+    color: var(--gray-700);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .stat-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .stat-quote {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--navy);
+    font-style: italic;
+    font-variation-settings: "opsz" 144;
+  }
+  .expense-list {
+    list-style: none;
+  }
+  .expense-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(26, 43, 74, 0.08);
+    transition: padding 0.3s ease;
+  }
+  .expense-list li:hover {
+    padding-left: 0.5rem;
+  }
+  .expense-list .item {
+    font-family: var(--body);
+    font-size: 1.05rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .expense-list .amount {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .expense-list .bar {
+    flex: 1;
+    margin: 0 1.5rem;
+    height: 2px;
+    background: var(--gray-100);
+    position: relative;
+    overflow: hidden;
+  }
+  .expense-list .bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--navy);
+    transform: scaleX(var(--w, 0));
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .expense-list li.in-view .bar::after {
+    transform: scaleX(var(--w, 0));
+  }
+
+  /* ==========================================================
+     HOW IT WORKS
+     ========================================================== */
+  .how {
+    background: var(--white);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .step {
+    position: relative;
+    padding: 2.5rem 2rem;
+    background: var(--cream);
+    border-top: 3px solid var(--gold);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .step:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-deep);
+  }
+  .step-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-variation-settings: "opsz" 144;
+  }
+  .step-icon {
+    width: 64px;
+    height: 64px;
+    margin: 1.5rem 0 1.5rem;
+    color: var(--gold);
+  }
+  .step h3 {
+    font-family: var(--display);
+    color: var(--navy);
+    margin-bottom: 0.85rem;
+    font-weight: 700;
+  }
+  .step p {
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .how-tagline {
+    text-align: center;
+    margin-top: 4rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--navy);
+    font-variation-settings: "opsz" 144;
+  }
+
+  /* ==========================================================
+     CATEGORIES
+     ========================================================== */
+  .categories {
+    background: var(--navy-dark);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .categories::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.08), transparent 70%);
+    border-radius: 50%;
+  }
+  .categories h2 { color: var(--white); }
+  .categories .lead { color: rgba(250, 247, 242, 0.75); }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .cat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .cat-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(212, 165, 116, 0.4);
+    transform: translateY(-4px);
+  }
+  .cat-card:hover::before { transform: scaleX(1); }
+
+  .cat-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.5rem;
+    color: var(--gold);
+  }
+  .cat-card h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .cat-saving {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .cat-desc {
+    font-size: 0.9rem;
+    color: rgba(250, 247, 242, 0.7);
+    line-height: 1.5;
+  }
+  .cat-disclaimer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.8rem;
+    color: rgba(250, 247, 242, 0.5);
+    font-style: italic;
+  }
+
+  /* ==========================================================
+     COMMUNITY / STORIES
+     ========================================================== */
+  .community {
+    background: var(--cream);
+  }
+  .stories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .story {
+    background: var(--white);
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .story:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-deep);
+  }
+  .story-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .story-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--cream-warm);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .story-meta { flex: 1; min-width: 0; }
+  .story-label {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .story-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-top: 0.15rem;
+  }
+  .story-quote {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--navy);
+    flex: 1;
+    margin-bottom: 1.5rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .story-reward {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 0.85rem 1rem;
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 1.5rem -2rem -2rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .community-disclaimer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    font-style: italic;
+  }
+
+  /* ==========================================================
+     EARLY ACCESS BENEFITS
+     ========================================================== */
+  .benefits {
+    background: var(--white);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .benefit {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .benefit-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    font-variation-settings: "opsz" 144;
+  }
+  .benefit h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .benefit p {
+    color: var(--gray-700);
+    font-size: 0.95rem;
+  }
+
+  /* ==========================================================
+     FORM SECTION (CTA)
+     ========================================================== */
+  .signup {
+    background: var(--navy-dark);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .signup::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(44, 120, 115, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .signup::after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .signup-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .signup h2 {
+    color: var(--white);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+  }
+  .signup .accent-italic { color: var(--gold); }
+  .signup p.lead { color: rgba(250, 247, 242, 0.8); margin-bottom: 2rem; }
+  .signup-meta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+    font-size: 0.9rem;
+    color: rgba(250, 247, 242, 0.65);
+    line-height: 1.6;
+  }
+  .signup-meta strong { color: var(--gold); font-weight: 600; }
+
+  /* Form card */
+  .form-card {
+    background: var(--cream);
+    color: var(--navy);
+    padding: 0.5rem;
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+  }
+  .form-card iframe {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+  }
+  .form-card .form-title {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .form-card .form-sub {
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    margin-bottom: 2rem;
+  }
+
+  .form-row { margin-bottom: 1.25rem; }
+  .form-row label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .form-row input,
+  .form-row select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(26, 43, 74, 0.15);
+    background: var(--white);
+    color: var(--navy);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: var(--body);
+  }
+  .form-row input:focus,
+  .form-row select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
+  }
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
+    background: var(--white);
+    border: 1px solid rgba(26, 43, 74, 0.15);
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0;
+    transition: all 0.2s ease;
+  }
+  .checkbox-group label:hover {
+    border-color: var(--gold);
+  }
+  .checkbox-group input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: var(--gold);
+    margin: 0;
+  }
+  .checkbox-group input[type="checkbox"]:checked + span {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .checkbox-group label:has(input:checked) {
+    background: var(--cream-warm);
+    border-color: var(--gold);
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 1.1rem;
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover {
+    background: var(--navy-dark);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px -8px rgba(15, 27, 48, 0.4);
+  }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .form-success.show { display: block; }
+  .form-success .icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+  }
+  .form-success h3 { color: var(--navy); margin-bottom: 0.5rem; }
+  .form-success p { color: var(--gray-700); }
+
+  .form-tiny {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+
+  /* ==========================================================
+     FAQ
+     ========================================================== */
+  .faq {
+    background: var(--cream);
+  }
+  .faq-list {
+    max-width: 820px;
+    margin: 3rem auto 0;
+  }
+  .faq-item {
+    border-bottom: 1px solid rgba(26, 43, 74, 0.12);
+  }
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    font-family: var(--display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-q .toggle {
+    font-family: var(--body);
+    font-size: 1.5rem;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+  .faq-item.open .faq-q .toggle {
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .faq-a-inner {
+    padding: 0 0 1.5rem;
+    color: var(--gray-700);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+  }
+
+  /* ==========================================================
+     FOOTER
+     ========================================================== */
+  footer {
+    background: var(--navy-deep);
+    color: rgba(250, 247, 242, 0.6);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  footer .logo { color: var(--cream); margin-bottom: 1rem; }
+  footer p { font-size: 0.9rem; line-height: 1.6; max-width: 360px; }
+  .footer-col h4 {
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .footer-col a {
+    display: block;
+    padding: 0.35rem 0;
+    color: rgba(250, 247, 242, 0.7);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 165, 116, 0.15);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* ==========================================================
+     SCROLL ANIMATIONS
+     ========================================================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.delay-1 { transition-delay: 0.1s; }
+  .reveal.delay-2 { transition-delay: 0.2s; }
+  .reveal.delay-3 { transition-delay: 0.3s; }
+  .reveal.delay-4 { transition-delay: 0.4s; }
+
+  /* Hero text animation on load */
+  .hero-content > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.7s; }
+  .hero-content > *:nth-child(6) { animation-delay: 0.85s; }
+  @keyframes heroFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ==========================================================
+     RESPONSIVE
+     ========================================================== */
+  @media (max-width: 960px) {
+    .problem-grid,
+    .signup-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .steps,
+    .stories,
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .cat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .hero-meta { gap: 1.5rem; }
+    .hero-meta-item .num { font-size: 1.6rem; }
+    .stat-block { padding: 2rem; }
+    .scroll-hint { display: none; }
+  }
+  @media (max-width: 540px) {
+    .cat-grid {
+      grid-template-columns: 1fr;
+    }
+    .checkbox-group {
+      grid-template-columns: 1fr;
+    }
+    .hero {
+      min-height: auto;
+      padding: 7rem 0 4rem;
+    }
+    .form-card { padding: 0.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">
+      Shanyraq <span class="usa">USA</span>
+    </a>
+    <a href="#signup" class="nav-cta">Подписаться</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="grain"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">Корпоративный клуб · США</span>
+      <h1>SHANYRAQ</h1>
+      <div class="subtitle-large">USA</div>
+      <p class="tagline">
+        Меняем правила игры. Объединяемся, чтобы получать корпоративные условия —
+        там, где поодиночке мы платим розничные цены.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#signup" class="btn btn-primary">
+          Стать одним из первых 200
+          <span class="arrow">→</span>
+        </a>
+        <a href="#how" class="btn btn-ghost">
+          Как это работает
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="num">4</span>
+          <span class="label">категории сервисов</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="num">200</span>
+          <span class="label">первых участников</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="num">до 60%</span>
+          <span class="label">экономия на медтуризме</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Прокрутите</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROBLEM
+     ============================================================ -->
+<section class="content problem" id="problem">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">01 · Проблема</span>
+      <h2>Почему мы платим больше, <span class="accent-italic">чем нужно?</span></h2>
+      <p class="lead">
+        Поодиночке мы покупаем по розничным ценам. Корпоративные клиенты с тысячами
+        сотрудников получают скидки 20–40% на те же сервисы.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+      <ul class="expense-list reveal">
+        <li style="--w: 1;"><span class="item">Аренда</span><span class="bar"></span><span class="amount">$1,800</span></li>
+        <li style="--w: 0.83;"><span class="item">Медицинская страховка</span><span class="bar"></span><span class="amount">$1,500</span></li>
+        <li style="--w: 0.33;"><span class="item">Прочие расходы</span><span class="bar"></span><span class="amount">$600</span></li>
+        <li style="--w: 0.19;"><span class="item">Авто и страховка</span><span class="bar"></span><span class="amount">$350</span></li>
+        <li style="--w: 0.12;"><span class="item">Связь и интернет</span><span class="bar"></span><span class="amount">$220</span></li>
+      </ul>
+
+      <div class="stat-block reveal delay-1">
+        <div class="stat-number">$4,470</div>
+        <div class="stat-label">в среднем тратит американская семья каждый месяц</div>
+        <div class="stat-divider"></div>
+        <p class="stat-quote">
+          «Клуб объединяет покупательную силу сотен семей —
+          и получает условия, как у крупного работодателя».
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="content how" id="how">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">02 · Решение</span>
+      <h2>Клуб коллективной <span class="accent-italic">покупательной силы</span></h2>
+      <p class="lead">
+        Один раз подписался — получаешь корпоративные условия от десятков сервисов
+        в четырёх ключевых категориях.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-num">01 / Подписка</span>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <path d="M20 8v6M23 11h-6"/>
+        </svg>
+        <h3>Вступаешь в клуб</h3>
+        <p>Одно подписание — без сложных регистраций в каждом сервисе по отдельности.</p>
+      </div>
+      <div class="step reveal delay-1">
+        <span class="step-num">02 / Условия</span>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <h3>Получаешь корпоративные цены</h3>
+        <p>Доступ к условиям, которые крупные компании дают своим сотрудникам.</p>
+      </div>
+      <div class="step reveal delay-2">
+        <span class="step-num">03 / Баллы</span>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <h3>Копишь баллы за активность</h3>
+        <p>Делишься опытом, оставляешь отзывы, рекомендуешь — увеличиваешь свои скидки.</p>
+      </div>
+    </div>
+
+    <p class="how-tagline reveal">
+      Чем больше нас — <span class="accent-italic">тем сильнее наши условия.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORIES
+     ============================================================ -->
+<section class="content categories" id="categories">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">03 · Что внутри клуба</span>
+      <h2>Сервисы клуба</h2>
+      <p class="lead">
+        Категории, по которым ведём переговоры с поставщиками.
+        Имена партнёров объявим после подписания контрактов.
+      </p>
+    </div>
+
+    <div class="cat-grid">
+      <div class="cat-card reveal">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <h3>Страхование</h3>
+        <div class="cat-saving">до 30%</div>
+        <p class="cat-desc">Медицина, авто, жильё, бизнес — корпоративные ставки</p>
+      </div>
+      <div class="cat-card reveal delay-1">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <h3>Аренда и жильё</h3>
+        <div class="cat-saving">до 15%</div>
+        <p class="cat-desc">Партнёрские условия от агентств и девелоперов</p>
+      </div>
+      <div class="cat-card reveal delay-2">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+          <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+          <line x1="12" y1="20" x2="12.01" y2="20"/>
+        </svg>
+        <h3>Связь и интернет</h3>
+        <div class="cat-saving">до 25%</div>
+        <p class="cat-desc">Семейные и корпоративные тарифы операторов</p>
+      </div>
+      <div class="cat-card reveal delay-3">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <h3>Медицина и здоровье</h3>
+        <div class="cat-saving">до 60%</div>
+        <p class="cat-desc">Клиники в США и медтуризм за рубежом</p>
+      </div>
+    </div>
+
+    <p class="cat-disclaimer">
+      * Целевые диапазоны на основе типичных корпоративных программ. Конкретные условия — после финализации партнёрств.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMMUNITY
+     ============================================================ -->
+<section class="content community" id="community">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">04 · Сообщество</span>
+      <h2>Ваши истории <span class="accent-italic">создают ценность</span></h2>
+      <p class="lead">
+        Делитесь опытом, оставляйте отзывы, рекомендуйте — копите баллы и получайте больше скидок.
+        Сценарии работы системы:
+      </p>
+    </div>
+
+    <div class="stories">
+      <div class="story reveal">
+        <div class="story-header">
+          <div class="story-avatar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="story-meta">
+            <div class="story-label">Отзыв о ресторане</div>
+            <div class="story-name">Айгерим, Хьюстон</div>
+          </div>
+        </div>
+        <p class="story-quote">
+          «Сходила в новое казахское кафе, сделала фото, написала честный отзыв
+          в Instagram и в чат клуба.»
+        </p>
+        <div class="story-reward">+ 3 балла</div>
+      </div>
+
+      <div class="story reveal delay-1">
+        <div class="story-header">
+          <div class="story-avatar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+          </div>
+          <div class="story-meta">
+            <div class="story-label">Рекомендация</div>
+            <div class="story-name">Данияр, Чикаго</div>
+          </div>
+        </div>
+        <p class="story-quote">
+          «Привёл двух друзей в клуб — рассказал, как мы сэкономили
+          на семейной медицинской страховке.»
+        </p>
+        <div class="story-reward">+ 10 баллов</div>
+      </div>
+
+      <div class="story reveal delay-2">
+        <div class="story-header">
+          <div class="story-avatar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="story-meta">
+            <div class="story-label">Совет в сообщество</div>
+            <div class="story-name">Жанна, Нью-Йорк</div>
+          </div>
+        </div>
+        <p class="story-quote">
+          «Поделилась опытом медтуризма в Турции — стоматолог, перелёт, отель.
+          Помогла 5 семьям спланировать поездку.»
+        </p>
+        <div class="story-reward">+ 15 баллов</div>
+      </div>
+    </div>
+
+    <p class="community-disclaimer">
+      * Сценарии для иллюстрации механики. Конкретное соотношение баллов и скидок будет утверждено к запуску.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     EARLY ACCESS BENEFITS
+     ============================================================ -->
+<section class="content benefits" id="benefits">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">05 · Ранний доступ</span>
+      <h2>Что даёт подписка <span class="accent-italic">сегодня</span></h2>
+      <p class="lead">
+        Первые 200 участников получают эксклюзивные условия на момент запуска
+        и право голоса в формировании клуба.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit reveal">
+        <div class="benefit-num">01</div>
+        <div>
+          <h3>Лучшая цена</h3>
+          <p>Зафиксируем условия для первых 200 — вне зависимости от тарифов после запуска.</p>
+        </div>
+      </div>
+      <div class="benefit reveal delay-1">
+        <div class="benefit-num">02</div>
+        <div>
+          <h3>Бонус при запуске</h3>
+          <p>Стартовые баллы на счёт и приоритетная поддержка от команды клуба.</p>
+        </div>
+      </div>
+      <div class="benefit reveal delay-2">
+        <div class="benefit-num">03</div>
+        <div>
+          <h3>Право голоса</h3>
+          <p>Выбираете партнёров и категории сервисов вместе с нами — клуб строится под вас.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SIGNUP FORM
+     ============================================================ -->
+<section class="content signup" id="signup">
+  <div class="container">
+    <div class="signup-inner">
+      <div class="reveal">
+        <span class="eyebrow">Подписка</span>
+        <h2 style="margin-top: 1.25rem;">Будьте <span class="accent-italic">первыми.</span></h2>
+        <p class="lead" style="margin-top: 1rem;">
+          Оставьте контакт — пришлём приглашение в клуб одними из первых,
+          до публичного запуска.
+        </p>
+        <div class="signup-meta">
+          <strong>Что произойдёт после подписки:</strong><br>
+          1. Получите письмо-подтверждение в течение часа<br>
+          2. Раз в 2 недели — апдейты о партнёрствах и подготовке к запуску<br>
+          3. Перед запуском — персональное предложение для первых 200
+        </div>
+      </div>
+
+      <!-- ============================================================
+        FORM CARD — Airtable embed
+        Форма подключена к базе Airtable. Все заявки попадают
+        напрямую в таблицу Shanyraq USA Subscribers.
+        ============================================================ -->
+      <div class="form-card reveal delay-1">
+        <iframe
+          class="airtable-embed"
+          src="https://airtable.com/embed/app7nXVbWGAhNohXN/shrChdiG3NRUOjQZi"
+          frameborder="0"
+          onmousewheel=""
+          width="100%"
+          height="700"
+          style="background: transparent; border: none;"
+          title="Форма подписки Shanyraq USA">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="content faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal" style="text-align: center; margin-left: auto; margin-right: auto;">
+      <span class="eyebrow" style="justify-content: center;">FAQ</span>
+      <h2 style="margin-top: 1.25rem;">Частые <span class="accent-italic">вопросы</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Когда запуск клуба?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Сейчас собираем первых 200 участников. Финализация партнёрских контрактов — Q3 2026,
+            запуск с доступом к сервисам — Q4 2026. До запуска подписчики получают регулярные апдейты.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Подписка платная?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            На этапе сбора подписчиков — нет. Условия членства в клубе после запуска
+            будут объявлены отдельно и согласованы с первыми участниками.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Какие конкретно партнёры в клубе?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Сейчас идут переговоры со страховыми компаниями, AI-сервисами, туроператорами
+            и поставщиками услуг связи. Имена партнёров объявим по мере подписания контрактов —
+            это вопрос юридической этики, а не закрытости.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Я живу не в США — могу присоединиться?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Клуб создаётся для русскоязычного сообщества в США. Часть сервисов
+            (медицинский туризм, AI-сервисы) могут быть доступны участникам из других стран —
+            подпишитесь и мы сообщим, что подходит именно вам.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Как работают баллы?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            За активность в сообществе — отзывы, фото, рекомендации друзей, советы другим участникам —
+            начисляются баллы. Они увеличивают вашу персональную скидку у партнёров клуба.
+            Точная механика будет утверждена к моменту запуска.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Как связаться с командой?
+          <span class="toggle">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Email: hello@shanyraq.usa · Instagram: @shanyraq.usa · WhatsApp по запросу.
+            Контакты обновим в футере после публичного запуска.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">Shanyraq <span class="usa">USA</span></div>
+        <p>
+          Корпоративный клуб коллективной покупательной силы для русскоязычного
+          сообщества в США. Объединяемся, чтобы экономить вместе.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Разделы</h4>
+        <a href="#problem">Проблема</a>
+        <a href="#how">Как это работает</a>
+        <a href="#categories">Сервисы</a>
+        <a href="#community">Сообщество</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Связаться</h4>
+        <a href="mailto:hello@shanyraq.usa">hello@shanyraq.usa</a>
+        <a href="https://instagram.com/shanyraq.usa" target="_blank" rel="noopener">Instagram</a>
+        <a href="#signup">Подписаться</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Shanyraq USA. Все права защищены.</span>
+      <span>Сделано с заботой о сообществе.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ==========================================================
+  // STICKY NAV ON SCROLL
+  // ==========================================================
+  const nav = document.getElementById('nav');
+  let lastScroll = 0;
+  function onScroll() {
+    const y = window.scrollY;
+    if (y > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    lastScroll = y;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ==========================================================
+  // INTERSECTION OBSERVER FOR REVEAL ANIMATIONS
+  // ==========================================================
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ==========================================================
+  // EXPENSE BARS ANIMATION
+  // ==========================================================
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.expense-list li').forEach(el => barObserver.observe(el));
+
+  // ==========================================================
+  // FAQ ACCORDION
+  // ==========================================================
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Toggle this one
+      if (!wasOpen) item.classList.add('open');
+      q.setAttribute('aria-expanded', !wasOpen);
+    });
+  });
+
+  // ==========================================================
+  // FORM
+  // Форма встроена через Airtable iframe — данные летят
+  // напрямую в базу. Никакой обработки на стороне сайта.
+  // ==========================================================
+</script>
+
+</body>
+</html>
